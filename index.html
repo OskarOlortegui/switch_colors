@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Switch Color Units</title>
+    <link rel="shortcut icon" href="./rainbow.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./sass/style.css">
+</head>
+<body>
+    <main> <!-- Grid -->
+        <div class="container">
+            <h1 class="title">Switch Colors</h1>
+            <section class="message">
+                <!-- <span>random message</span><span>x</span> -->
+            </section>
+            <section class="board"></section>
+
+            <div class="switch">
+                <input type="checkbox" id="checkbox">
+            </div>
+
+            <div class="control">
+                <form>
+                    <div class="form-control hexControl">
+                        <input type="text" id="hexVal" class="control-input">
+                        <h4 id="current_hexVal">#222</h4>
+                    </div>
+                    <div class="form-control d-none">
+                        <input type="text" id="rValue" class="control-input">
+                        <h4 id="current_rValue">R-34</h4>
+                    </div>
+                    <div class="form-control d-none">
+                        <input type="text" id="gValue" class="control-input">
+                        <h4 id="current_gValue">G-34</h4>
+                    </div>
+                    <div class="form-control d-none">
+                        <input type="text" id="bValue" class="control-input">
+                        <h4 id="current_bValue">B-34</h4>
+                    </div>
+                    <button class="cta">Convert</button>
+                </form>
+                <div class="results"><!-- Grid center-->
+                    <h3 id="result">rgb(34,34,34)</h3>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="./main.js"></script>
+</body>
+</html>

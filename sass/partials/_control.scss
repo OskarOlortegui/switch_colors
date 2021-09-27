@@ -1,0 +1,88 @@
+.control{
+    @include flexConfig(space-around);
+    form{
+        width: 210px;
+
+        button.cta{
+            height: 40px;
+            width: 100%;
+            margin-top: 1.2rem;
+            border-radius: 20px;
+            outline: none;
+            border: none;
+            letter-spacing: 0.1rem;
+            font-family: $ff;
+            font-weight: bold;
+            background-color: $lightBlue;
+            cursor: pointer;
+
+            transition: background-color .5 ease-in;
+
+            &:hover{
+                background-color: #cfe2ff;
+            }
+        }
+    }
+    .results{
+        @include gridCenter();
+        font-size: 1.2rem;
+    }
+}
+
+.form-control{
+    position: relative;
+    border-bottom: 2px solid #d9d9d9;
+    height: 45px;
+
+    @include fadeAnimaton();
+
+    &:not(.hexControl){
+        display: inline-block;
+        width: 32%;
+    }
+
+    input{
+        padding: .2rem .7rem;
+        font-size: 1rem;
+        color: $cl_grey;
+        border: none;
+        outline: none;
+
+        position: absolute;
+        top: 0;
+        left:0;
+        width: 100%;
+        height: 100%;
+    }
+    h4{
+        position: absolute;
+        top: 50%;
+        left: .7rem;
+        transform: translateY(-50%);
+        color: $cl_lightgrey;
+        font-size: 17px;
+
+        transition: $transition;
+    }
+    //Js class
+    &.focus h4{
+        top: -6px;
+        font-size: 12px;
+    }
+
+    &::after, &::before{
+        content: '';
+        width: 0; /*JS focus class*/
+        height: 2px;
+        background-color: $darkBlue;
+
+        position: absolute;
+        bottom: -2px;
+
+        transition: $transition;
+    }
+    &::after{ right: 50%;}
+    &::before{ left: 50%;}
+    //Js class
+    &.focus::after, &.focus::before{ width: 50%;}
+}

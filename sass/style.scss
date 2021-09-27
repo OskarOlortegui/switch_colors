@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+
+$ff: "Open Sans", sans-serif;
+$cl_white: #fff;
+$cl_dark: #222;
+$cl_grey: #555;
+$cl_lightgrey: #999;
+$bd_bg: #f1f5f8;
+$shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+$transition: all 0.3s ease-in;
+$lightBlue: #b6d4fe;
+$darkBlue: #5490eb;
+//mixin
+@mixin alertBox {
+    color: #664d03;
+    background-color: #fff3cd;
+    border: 1px solid #ffecb5;
+    border-radius: 0.25rem;
+    padding: .5rem;
+}
+@mixin flexConfig($val){
+    display: flex;
+    align-items: center;
+    justify-content: $val;
+}
+@mixin gridCenter(){
+    display: grid;
+    place-items: center;
+}
+@mixin fadeAnimaton(){
+    opacity: 0;
+    animation: fadeIn .5s forwards ease-in;
+    @keyframes fadeIn {
+        from{opacity: 0;}
+        to{opacity: 1;}
+    }
+}
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+    background-color: $bd_bg;
+    font-family: $ff;
+    line-height: 1.5;
+}
+main{
+    min-height: 100vh;
+    @include gridCenter();
+}
+
+.container{
+    width: 480px;
+    background: $cl_white;
+    border-radius: 1em;
+    box-shadow: $shadow;
+    padding: 1rem;
+}
+
+.title{
+    text-align: center;
+    user-select: none;
+}
+
+@import './partials/alert';
+
+.board{
+    width: 80%;
+    margin: 1rem auto;
+    height: 9em;
+    background-color: $cl_dark;
+    border-radius: 1em;
+    box-shadow: 0px 0px 8px #ccc;
+
+    @include fadeAnimaton();
+}
+
+@import './partials/checkBox';
+@import './partials/control';
+
+.d-none{
+    display: none !important;
+}

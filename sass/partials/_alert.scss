@@ -1,0 +1,16 @@
+//.message.alert{
+.message.alert{
+
+    @include alertBox();
+    width: 80%;
+    margin: 1rem auto 0;
+    cursor: pointer;
+    @include flexConfig(space-between);
+    
+    @include fadeAnimaton();
+    span{
+        display: inline-block;
+        margin: 0 .4rem;
+        font-size: 12px;
+    }
+}
